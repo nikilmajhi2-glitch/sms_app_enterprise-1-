@@ -21,6 +21,6 @@
     "nodemon": "^2.0.22",
     "mocha": "^10.2.0",
     "chai": "^4.3.7",
-    "supertest": "^6.4.4"
+    "supertest": "^6.3.3"
   }
 }
