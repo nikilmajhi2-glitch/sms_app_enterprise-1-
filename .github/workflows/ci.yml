@@ -1,18 +1,27 @@
 name: CI
-on: [push]
+
+on:
+  push:
+
 jobs:
   backend-test:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Node
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
         uses: actions/setup-node@v4
-        with: node-version: '20'
-      - name: Install
+        with:
+          node-version: '20'
+
+      - name: Install backend dependencies
         run: |
           cd node_backend
           npm install
-      - name: Run tests
+
+      - name: Run backend tests
         run: |
           cd node_backend
           npm test
