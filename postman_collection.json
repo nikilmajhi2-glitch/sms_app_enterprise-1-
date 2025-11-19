@@ -1,0 +1,60 @@
+{
+  "info": {
+    "name": "sms_enterprise",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"phone\":\"+911234567890\",\"password\":\"pass\"}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/auth/register",
+          "host": [
+            "http://localhost:5000"
+          ],
+          "path": [
+            "auth",
+            "register"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"phone\":\"+911234567890\",\"password\":\"pass\"}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/auth/login",
+          "host": [
+            "http://localhost:5000"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      }
+    }
+  ]
+}

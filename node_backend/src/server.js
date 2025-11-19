@@ -1,0 +1,12 @@
+require('dotenv').config();
+const express = require('express');
+const cors = require('cors');
+const morgan = require('morgan');
+const mongoose = require('mongoose');
+const routes = require('./routes');
+const app = express();
+app.use(cors()); app.use(morgan('dev')); app.use(express.json());
+mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/sms_enterprise').then(()=>console.log('mongo ok')).catch(e=>console.error(e));
+app.use('/', routes);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, ()=> console.log('server on', PORT));

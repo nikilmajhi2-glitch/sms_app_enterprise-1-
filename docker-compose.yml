@@ -1,0 +1,20 @@
+version: '3.8'
+services:
+  backend:
+    build: ./node_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/sms_enterprise
+      - JWT_SECRET=supersecret
+      - ADMIN_JWT=adminsecret
+  mongo:
+    image: mongo:6
+    restart: always
+    volumes:
+      - mongo-data:/data/db
+  redis:
+    image: redis:7
+    restart: always
+volumes:
+  mongo-data:
